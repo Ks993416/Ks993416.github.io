@@ -1,9 +1,267 @@
 <!DOCTYPE html>
-<html>
-    <title>ilya</title>
-    <img src="icon.png">
-    <h1>Офицальный сайт ilya6612288</h1>
-    <h2>Обо мне: скретчер, учу пайтон может и php(ну не на долго), хочу стать чьим то тестером проектов тг есть, может яндекс чат сделаю, и любимые ии: deepseek, kimi, claude, нейрохам(ну ели как нашел) </h2>
-    <a href="https://ks993416.github.io/wiki/">Wiki кликни</a>
-    
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilya6612288 — официальный сайт</title>
+    <style>
+        /* ——— RESET ——— */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(ellipse at 50% 0%, #1a1a2e 0%, #0d0d1a 100%);
+            padding: 24px;
+            color: #f0eef8;
+        }
+
+        .card {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 40px;
+            padding: 44px 36px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            text-align: center;
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ——— АВАТАР ——— */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.10);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .avatar:hover {
+            transform: scale(1.04) rotate(-2deg);
+            box-shadow: 0 12px 40px rgba(80, 60, 200, 0.20);
+        }
+
+        /* ——— ЗАГОЛОВКИ ——— */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0eef8 0%, #a99bff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 300;
+            letter-spacing: 0.6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* ——— БИО ——— */
+        .bio {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.78);
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 20px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .bio strong {
+            color: #c8bfff;
+            font-weight: 500;
+        }
+
+        /* ——— ТЕГИ (скиллы) ——— */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            letter-spacing: 0.2px;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ——— СПИСОК ИИ ——— */
+        .ai-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 14px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.50);
+            margin-bottom: 28px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.06);
+        }
+
+        .ai-list span {
+            color: #b0a5ff;
+            font-weight: 400;
+        }
+
+        /* ——— КНОПКА ——— */
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0d0d1a;
+            background: linear-gradient(135deg, #b0a5ff 0%, #7b6ad9 100%);
+            box-shadow: 0 6px 24px rgba(100, 80, 200, 0.25);
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 36px rgba(100, 80, 200, 0.35);
+            background: linear-gradient(135deg, #c4bbff 0%, #8f7ee6 100%);
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ——— ФУТЕР ——— */
+        .footer {
+            margin-top: 28px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.8px;
+        }
+
+        /* ——— RESPONSIVE ——— */
+        @media (max-width: 600px) {
+            .card {
+                padding: 32px 20px 28px;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .avatar {
+                width: 90px;
+                height: 90px;
+            }
+            .bio {
+                font-size: 0.95rem;
+                padding: 16px 18px;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+            .ai-list {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .bio {
+                font-size: 0.85rem;
+                padding: 14px 14px;
+            }
+            .tags .tag {
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+            .ai-list {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- АВАТАР -->
+        <img class="avatar" src="icon.png" alt="ilya6612288" />
+
+        <!-- ЗАГОЛОВОК -->
+        <h1>ilya6612288</h1>
+        <p class="tagline">официальный сайт</p>
+
+        <!-- БИО -->
+        <div class="bio">
+            <strong>обо мне:</strong><br>
+            скретчер, учу <strong>Python</strong>, может и <strong>PHP</strong> (ну не на долго).<br>
+            хочу стать чьим-то тестером проектов — <strong>ТГ есть</strong>, может яндекс-чат сделаю.
+        </div>
+
+        <!-- ТЕГИ-СКИЛЛЫ -->
+        <div class="tags">
+            <span class="tag">#scratch</span>
+            <span class="tag">#python</span>
+            <span class="tag">#php</span>
+            <span class="tag">#тестировщик</span>
+            <span class="tag">#яндекс-чат</span>
+        </div>
+
+        <!-- ЛЮБИМЫЕ ИИ -->
+        <div class="ai-list">
+             любимые ИИ: <span>DeepSeek</span> · <span>Kimi</span> · <span>Claude</span> · <span>Нейрохам</span>
+        </div>
+
+        <!-- КНОПКА -->
+        <a class="btn" href="https://ks993416.github.io/wiki/" target="_blank">📖 Wiki — кликни</a>
+
+        <!-- ФУТЕР -->
+        <div class="footer">✦ ilya6612288 ✦ - сделано с помощью ии</div>
+
+    </div>
+
+</body>
 </html>
